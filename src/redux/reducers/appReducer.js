@@ -1,19 +1,30 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  useData: {}
+    userInfo: null,
+    token: null,
+    placeExpanded: false
 };
 
-export const counterSlice = createSlice({
-  name: 'counter',
-  initialState,
-  reducers: {
-    loginUserData: (state, action) => {
-      state.useData = action.payload;
+const authSlice = createSlice({
+    name: "auth",
+    initialState,
+    reducers: {
+        setUserInfo: (state, action) => {
+            state.userInfo = action.payload;
+        },
+        setToken: (state, action) => {
+            state.token = action.payload;
+        },
+        logout: (state) => {
+            state.userInfo = null;
+            state.token = null;
+        },
+        placeEpanded: (state, action) => {
+            state.placeExpanded = action.payload;
+        },
     },
-  },
 });
 
-export const { loginUserData } = counterSlice.actions;
-
-export default counterSlice.reducer;
+export const { setUserInfo, setToken, logout, placeEpanded } = authSlice.actions;
+export default authSlice.reducer;
