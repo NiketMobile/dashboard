@@ -53,28 +53,28 @@ export default function SideBar() {
   const { placeExpanded, togglePlaceExpanded } = useLayout();
 
   return (
-    // <aside className={`h-screen fixed overflow-hidden transition-all border-r border-gray-200 duration-300 ease-in-out ${isExpanded ? 'w-64' : 'w-20'}`}>
     <aside
       className={`
-    fixed
-    top-0
-    left-0
-    h-screen
-    z-50
-    overflow-hidden
-    transition-all
-    duration-300
-    ease-in-out
-    bg-white
-    border-gray-200
-    px-5
-    mt-16
-    flex flex-col
-    lg:mt-0
-    ${isExpanded ? 'w-64' : 'w-20'}
-    -translate-x-full
-    lg:translate-x-0
-  `}>
+        fixed
+        top-0
+        left-0
+        h-screen
+        z-50
+        overflow-hidden
+        transition-all
+        duration-300
+        ease-in-out
+      bg-white
+      border-gray-400
+        border-r
+        px-2
+        flex 
+        flex-col
+        lg:mt-0
+        ${isExpanded ? 'w-64' : 'w-20'}
+        lg-translate-x-full
+        lg:translate-x-0 `}
+    >
       <nav className='h-full flex flex-col justify-between bg-white'>
         <div className={`flex justify-between items-center p-4 border-b border-gray-300 bg-white`}>
           <h1 className={`${isExpanded ? 'block' : 'hidden'} text-lg font-bold text-gray-800`}>Admin Dashboard</h1>

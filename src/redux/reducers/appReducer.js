@@ -23,6 +23,7 @@ const authSlice = createSlice({
         placeEpanded: (state, action) => {
             state.placeExpanded = action.payload;
         },
+       
     },
 });
 

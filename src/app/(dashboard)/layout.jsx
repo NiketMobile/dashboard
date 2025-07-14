@@ -1,16 +1,4 @@
-// import SideBar from '@/components/sideBar';
-// import React from 'react';
-
-// export default function DashboardLayout({ children }) {
-//   return (
-//     <div className="min-h-screen xl:flex">
-//       <SideBar />
-//       {children}
-//     </div>
-//   );
-// }
-
-"uswe client"
+"use client"
 
 import ClientLayoutWrapper from '@/components/ClientLayoutWrapper';
 import SideBar from '@/components/sideBar';
@@ -20,10 +8,10 @@ export default function DashboardLayout({ children }) {
 
 
   return (
-    <div className="min-h-screen xl:flex">
+    <div className="min-h-screen xl:flex bg-gray-100">
       <ClientLayoutWrapper>
         <SideBar />
-        <div className={`p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6`}>{children}</div>
+        <div className={`mx-auto max-w-(--breakpoint-2xl)`}>{children}</div>
       </ClientLayoutWrapper>
     </div>
   );
