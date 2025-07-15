@@ -54,7 +54,7 @@ export default function productsDetails({ params }) {
               </div>
             </div>
             <div className='w-full pt-10'>
-              <button className=" bg-brand-900 py-5 px-7 rounded hover:bg-brand-500 transition">
+              <button className="mousehover cursor-pointer bg-brand-900 py-5 px-7 rounded hover:bg-brand-500 transition">
                 <p className="text-[18px] text-white font-bold text-center">Add to Cart</p>
               </button>
             </div>

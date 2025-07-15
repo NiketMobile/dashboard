@@ -3,50 +3,10 @@ import React, { useState } from 'react'
 import { FaAlignLeft, FaAlignRight, FaUser, FaHome, FaBars, FaBell } from 'react-icons/fa';
 import SideBarItem from './sideBarItem';
 import { useLayout } from '@/context/layoutContext';
+import { listData } from '@/utils/constants';
 
 export default function SideBar() {
-  const listData = [
-    {
-      id: 1,
-      text: 'Dashboard',
-      icon: <FaHome />,
-      active: true,
-      alert: false,
-      path: "dashboard",
-    },
-    {
-      id: 2,
-      text: 'Menu',
-      icon: <FaBars />,
-      active: false,
-      alert: true,
-      options: [
-        {
-          id: 11, text: 'Sub Menu 1',
-          icon: <FaBars />,
-          active: false,
-          alert: false,
-          path: "dashboard",
-        },
-        {
-          id: 12,
-          text: 'Sub Menu 2',
-          icon: <FaBars />,
-          active: false,
-          alert: false,
-          path: "dashboard",
-        },
-      ],
-    },
-    {
-      id: 3,
-      text: 'Products',
-      icon: <FaBell />,
-      active: false,
-      alert: false,
-      path: "products",
-    },
-  ];
+
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedId, setSelectedId] = useState(null);

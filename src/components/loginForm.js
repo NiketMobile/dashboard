@@ -13,13 +13,11 @@ export default function LoginForm({ onSubmitData }) {
     }
 
     return (
-        <div className='mx-auto p-8'>
-            <form className='flex justify-center items-center min-h-screen'>
-                <div className="pb-12 w-1/3  bg-brand-50 p-10 rounded-[10px]">
+        <div className='flex justify-center items-center min-h-screen p-4'>
+            <form className='w-full max-w-md'>
+                <div className="pb-12 bg-brand-50 p-10 rounded-[10px]">
                     <h2 className="text-base/7 font-semibold text-gray-900 text-[25px] justify-center items-center flex">Login</h2>
-
                     <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-6">
-
                         <div className="sm:col-span-6">
                             <label htmlFor="first-name" className="block font-medium text-gray-900 text-[18px]">
                                 First name

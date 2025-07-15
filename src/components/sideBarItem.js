@@ -3,6 +3,8 @@ import { placeEpanded } from '@/redux/reducers/appReducer';
 import { redirect } from 'next/navigation';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import Cookies from 'js-cookie';
+
 
 export default function SideBarItem({ item, isExpanded, selectedId, setSelectedId }) {
     const { text, icon, active, alert, options } = item;
@@ -16,10 +18,12 @@ export default function SideBarItem({ item, isExpanded, selectedId, setSelectedI
         setOpen(!open);
         setSelectedId(item.id);
         redirect(`/${item.path}`);
-        redirect(`/products`);
     };
 
     const handleSubItemClick = (sub) => {
+        //     Cookies.remove('authToken')
+        //    redirect('/login');
+        //     return
         setSelectedId(sub.id);
         console.log('sub--->', JSON.stringify(sub, null, 2))
         redirect(`/${sub.path}`);
@@ -27,13 +31,15 @@ export default function SideBarItem({ item, isExpanded, selectedId, setSelectedI
 
 
     return (
-        <div className="w-full">
+        <div className="w-full mt-3">
             <button
                 onClick={() => {
-                    setOpen(!open);
-                    handleItemClick()
-                    togglePlaceExpanded()
-                    // dispatch(placeEpanded(open))
+                    if (item.path === null) {
+                        setOpen(!open);
+                    } else {
+                        handleItemClick()
+                        togglePlaceExpanded()
+                    }
                 }}
                 className={`flex justify-between items-center w-full px-4 py-3 rounded hover:bg-brand-300 transition-colors ${isItemSelected ? 'bg-brand-400 text-white font-semibold' : 'text-gray-800'
                     }`}
@@ -48,7 +54,7 @@ export default function SideBarItem({ item, isExpanded, selectedId, setSelectedI
             </button>
 
             {options && open && (
-                <ul className="pl-6 mt-2 space-y-1">
+                <ul className="pl-4 mt-2 space-y-1">
                     {options.map((sub) => {
                         const isSubItemSelected = selectedId === sub.id;
 
